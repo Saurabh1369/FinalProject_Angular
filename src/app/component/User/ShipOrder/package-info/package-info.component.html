@@ -1,0 +1,84 @@
+<app-user-nav-bar></app-user-nav-bar>
+<br>
+
+
+<div class="container z-depth-3" style="padding: 30px">
+<nav >
+    <div class="nav-wrapper grey darken-1">
+      <div class="col s4">
+        <a class="breadcrumb hide-on-med-and-down"  style="padding: 10px">Pickup Address</a>
+        <a class="breadcrumb hide-on-med-and-down"  style="padding: 10px">Destination Address</a>
+        <a class="breadcrumb"  style="padding: 10px">Package Details</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+<form action="" (submit)="onPackageSubmit()">
+      <div class="row">
+          <div class="input-field col s12 m8 l8" onclick="packgeload()">
+            <textarea name="desc" id="desc" class="validate materialize-textarea" [(ngModel)]="pkg.description" ></textarea>
+            <label for="desc">Package Description</label>
+          </div>
+
+          <div class="input-field col s12 m4 l4">
+              <select id="state" name="state" [(ngModel)]="pkg.item_count">
+                  <option value="1" selected>1</option>
+                  <option value="2" >2</option>
+                  <option value="3" >3</option>
+                  <option value="4" >4</option>
+                  <option value="5" >5</option>
+                  <option value="6" >6</option>
+                  <option value="7" >7</option>
+                  <option value="8" >8</option>
+                  <option value="9" >9</option>
+                  <option value="10" >10</option>
+              </select>
+              <label>Item Count</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <h5> Size Details </h5>
+            <div class="input-field col s12 m4 l4">
+                  <input type="number" name="length" id="length" class="validate" [(ngModel)]="pkg.length">
+                  <label for="length">length</label>
+            </div>
+            <div class="input-field col s12 m4 l4">
+                <input type="number" name="width" id="width" class="validate" [(ngModel)]="pkg.width">
+                <label for="width">width</label>
+          </div>
+          <div class="input-field col s12 m4 l4">
+              <input type="number" name="height" id="height" class="validate" [(ngModel)]="pkg.height">
+              <label for="height">height</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l6">
+            <select id="weight" name="weight" [(ngModel)]="pkg.weight">
+                <option *ngFor="let w of wgt" value="{{ w.price }}" > {{ w.weight_range }} </option>
+              </select>
+              <label>Weight</label>
+        </div>
+
+        <div class="input-field col s12 m6 l6" style="padding: 0em 5em">
+          <p>Delivery Type</p>
+          <p  *ngFor="let item of dtype">
+              <label>
+                <input name="dtype" type="radio" value="{{item.price }}" [(ngModel)]="pkg.d_type" />
+                <span> {{item.d_type}} &nbsp;&nbsp;</span>
+              </label>
+              </p>
+          </div>
+          
+          <ng-container *ngIf="pkg.weight*1 && pkg.d_type*1">
+              <div>
+                  <h5>Order Amount : {{ pkg.weight*1 + pkg.d_type*1 }} </h5>
+                </div>
+          </ng-container>              
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Place Order
+      </button>
+
+</form>
+</div>

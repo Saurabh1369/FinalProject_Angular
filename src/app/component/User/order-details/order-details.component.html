@@ -1,0 +1,69 @@
+<app-user-nav-bar></app-user-nav-bar>
+<br><br>
+
+<div class="container z-depth-3 cyan lighten-4" style="padding: 30px">
+        <div class="row">
+                <div class="col s12">
+                  <div class="card-panel blue lighten-5">
+                    <span class="">
+                    <h6> <strong>Order# {{orderDetail.order_id}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status: {{orderDetail.order_status}}  </strong></h6>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+    <div class="row">
+
+        <div class="col s12 m5 l5"> 
+            <h5 class="header">Pickup Details</h5>
+            <div class="card-panel grey lighten-4">
+                    <span >
+                        <p> <strong>Name</strong> : {{ orderDetail.fname }} {{ orderDetail.lname }}</p>
+                        <p> <strong>Address</strong> : {{ orderDetail.address }} </p>
+                        <p><strong>City</strong> : {{ orderDetail.city }} </p>
+                        <p> <strong>State</strong> : {{ orderDetail.state }} </p>
+                        <p><strong>Pincode </strong> : {{ orderDetail.pincode }} </p>
+                        <p><strong>Email </strong> : {{ orderDetail.email }} </p>
+                        <p><strong>Phone </strong> : {{ orderDetail.phone }} </p>
+                    </span>
+            </div>
+        </div>
+        <div class="col s12 m1 l1">   </div>
+        
+        <div class="col s12 m5 l5">
+            <h5 class="header">Destination Details</h5>
+            <div class="card-panel grey lighten-4">
+                <span >
+                        <p> <strong>Name</strong> : {{ orderDetail.d.fname }} {{ orderDetail.lname }}</p>
+                        <p> <strong>Address</strong> : {{ orderDetail.d.address }} </p>
+                        <p><strong>City</strong> : {{ orderDetail.d.city }} </p>
+                        <p> <strong>State</strong> : {{ orderDetail.d.state }} </p>
+                        <p><strong>Pincode </strong> : {{ orderDetail.d.pincode }} </p>
+                        <p><strong>Email </strong> : {{ orderDetail.d.email }} </p>
+                        <p><strong>Phone </strong> : {{ orderDetail.d.phone }} </p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col s12">
+                    <h5 class="header">Order Details</h5>
+                    <div class="card-panel blue lighten-5">
+                        <span class="">
+                                <p> <strong>Description</strong> : {{ orderDetail.pkg.description }} </p>
+                                <p> <strong>Package Size </strong> : {{ orderDetail.pkg.height }} x {{ orderDetail.pkg.width }} x {{ orderDetail.pkg.length }} </p>
+                                <br>
+                                <p><strong>Cost</strong> : </p>
+
+                                <p> &nbsp;&nbsp;&nbsp; Weight : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                    {{ orderDetail.pkg.weight }} </p>
+
+                                <p> &nbsp;&nbsp;&nbsp; Delivery Type : &nbsp; {{ orderDetail.pkg.d_type }} </p>
+                                <h6><strong>TOTAL </strong> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                                     {{ orderDetail.pkg.weight*1 + orderDetail.pkg.d_type*1 }} Rs. </h6>
+                        </span>
+                    </div>
+            </div>
+    </div>
+</div>

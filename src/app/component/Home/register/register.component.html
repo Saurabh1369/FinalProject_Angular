@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<br><br>
+<div class="container z-depth-3" style=" padding:30px;">
+
+  <h3>Register</h3>
+  <form action="" (ngSubmit)="signup()" >
+    <div class="input-field col s12 l6">
+      <input type="text" id="fname" name="fname" [(ngModel)]="user.fname" class="validate">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <input type="text" id="lname" name="lname" [(ngModel)]="user.lname" class="validate">
+      <label for="lname">Last Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" class="validate">
+      <label for="email" data-error="wrong" data-success="right">Email</label>
+    </div>
+    <div class="input-field col s12">
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" class="validate">
+      <label for="password" data-success="right">Password</label>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    </button>
+  </form>
+
+</div>

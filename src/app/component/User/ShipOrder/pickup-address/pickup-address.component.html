@@ -1,0 +1,78 @@
+<app-user-nav-bar></app-user-nav-bar>
+<br>
+
+<div class="container z-depth-3" style="padding: 30px">
+
+    <nav >
+        <div class="nav-wrapper grey darken-1">
+          <div class="col s4">
+            <a class="breadcrumb"  style="padding: 10px">Pickup Address</a>
+          </div>
+        </div>
+      </nav>
+      <br>
+
+  <form action="" (submit)="onPickupSubmit()" >
+    <div class="row">
+      <div class="input-field col s6 "  onclick="myfun()" >
+        <i class="material-icons prefix">account_box</i>
+        <input type="text" name="fname" id="fname" class="validate" [(ngModel)]="s.fname" >
+        <label for="fname">First Name</label>
+      </div>
+
+      <div class="input-field col s6">
+        <input type="text" name="lname" id="lname" class="validate" [(ngModel)]="s.lname" >
+        <label for="lname">Last Name</label>
+      </div>
+  </div>
+
+    <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">home</i>
+      <textarea name="address" id="address" class="validate materialize-textarea"[(ngModel)]="s.address" ></textarea>
+      <label for="address">Address</label>
+    </div>
+  </div>
+    <div class="row">
+          <div class="input-field col s12 m12 l4">
+              <i class="material-icons prefix">location_city</i>
+              <select id="state" name="state" [(ngModel)]="selectedState" (change)="loadCities()" onchange="myfun1()">
+                <option value="" disabled selected>Choose your option</option>
+                  <option *ngFor="let s of states" value= "{{ s.state_id }}"> {{ s.state_name }} </option>
+              </select>
+              <label>State</label>
+          </div>
+
+          <div class="input-field col s12 m12 l4">
+              <select id="city" name="city" [(ngModel)]="s.city" >
+                <option value="" disabled selected>Choose your option</option>
+                  <option *ngFor="let c of city" value= "{{ c.city_name }}"> {{ c.city_name }} </option>
+              </select>
+              <label>City</label>
+            </div>            
+
+      <div class="input-field col s12 m12 l4 ">
+          <i class="material-icons prefix">fiber_pin</i>
+        <input type="number" name="pincode" id="pincode" class="validate" [(ngModel)]="s.pincode" >
+        <label for="pincode">Pincode</label>
+      </div>
+  </div>
+  <div class="row">
+  <div class="input-field col s6 m6 l6">
+      <i class="material-icons prefix">email</i>
+      <input type="email" name="email" id="email" class="validate" [(ngModel)]="s.email">
+      <label for="email">Email</label>
+      <span class="helper-text" data-error="Wrong" data-success="right"></span>
+    </div>
+
+    <div class="input-field col s6 m6 l6">
+        <i class="material-icons prefix">phone</i>
+      <input type="number" name="phone" id="phone" class="validate" [(ngModel)]="s.phone" >
+      <label for="phone">Phone</label>
+    </div>
+  </div>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action"> Next </button>
+  </form>
+
+</div>
