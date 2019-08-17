@@ -3,6 +3,7 @@ import { AdminService } from 'src/app/Services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Users } from './../../../../model/user';
 import { HttpErrorResponse } from '@angular/common/http';
+declare var M: any;
 
 @Component({
   selector: 'app-users',

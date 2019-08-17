@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/Services/admin.service';
 import { SourceAddress } from 'src/app/model/source_address';
+declare var M: any;
 
 @Component({
   selector: 'app-admin-order-details',
@@ -9,6 +10,7 @@ import { SourceAddress } from 'src/app/model/source_address';
   styleUrls: ['./admin-order-details.component.css']
 })
 export class AdminOrderDetailsComponent implements OnInit,AfterViewInit {
+  
 
   constructor(  private route: ActivatedRoute, private router: Router, private as:AdminService ) { }
 

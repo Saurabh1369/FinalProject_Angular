@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Users } from 'src/app/model/user';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/Services/admin.service';
+declare var M: any;
 
 @Component({
   selector: 'app-delivery-person-register',

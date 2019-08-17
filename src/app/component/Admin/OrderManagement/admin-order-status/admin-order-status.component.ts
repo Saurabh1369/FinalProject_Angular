@@ -3,6 +3,8 @@ import { SourceAddress } from 'src/app/model/source_address';
 import { AdminService } from '../../../../Services/admin.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+declare var M: any;
+
 
 @Component({
   selector: 'app-admin-order-status',

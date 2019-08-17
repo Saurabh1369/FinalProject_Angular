@@ -4,6 +4,7 @@ import { AdminService } from 'src/app/Services/admin.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { OrderManagementDialogComponent } from '../order-management-dialog/order-management-dialog.component';
 import { DeliveryService } from './../../../Services/delivery.service';
+declare var M: any;
 
 @Component({
   selector: 'app-delivery-order-management',

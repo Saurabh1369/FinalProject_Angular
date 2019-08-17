@@ -1,5 +1,6 @@
 
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+declare var M: any;
 
 @Component({
   selector: 'app-admin-home',

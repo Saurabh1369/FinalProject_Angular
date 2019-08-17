@@ -3,7 +3,7 @@ import { RouterLink, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 import { Users } from 'src/app/model/user';
 import { HttpErrorResponse } from '@angular/common/http';
-
+declare var M: any;
 
 
 @Component({

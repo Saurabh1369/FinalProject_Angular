@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 import { Users } from 'src/app/model/user';
 
+declare var M: any;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
