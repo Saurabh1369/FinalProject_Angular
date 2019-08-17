@@ -19,7 +19,7 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  hosturl = "http://localhost:7070/Project_REST";
+  hosturl = "https://rest-java-cms.herokuapp.com";
 
   getAllOrders( ) : Observable <SourceAddress[]>
   {

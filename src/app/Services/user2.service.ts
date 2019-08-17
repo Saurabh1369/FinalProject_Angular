@@ -20,7 +20,7 @@ export class User2Service {
 
   constructor(private http:HttpClient) { }
 
-  hosturl = "http://localhost:7070/Project_REST";
+  hosturl = "https://rest-java-cms.herokuapp.com";
 
 
 
