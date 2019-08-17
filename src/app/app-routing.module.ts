@@ -21,6 +21,7 @@ import { DeliveryOrderManagementComponent } from './component/Delivery/delivery-
 
 const routes: Routes = [
   { path:"" , component : LoginComponent },
+  { path:"login" , component : LoginComponent },
   { path:"register" , component : RegisterComponent },
 
   { path:"user/home" , component : UserHomeComponent },
