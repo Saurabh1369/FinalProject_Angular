@@ -8,7 +8,7 @@
         <th >Order #</th>
         <th >From</th>
         <th >To</th>
-        <th >Source City</th>
+        <th class="hide-on-small-only">Source City</th>
         <th >Destination City</th>
         <th >Status</th>
         <th></th>
@@ -19,7 +19,7 @@
         <td>{{ item.order_id }}</td>
         <td>{{ item.fname }}</td>
         <td>{{ item.d.fname }}</td>
-        <td>{{ item.city }}</td>
+        <td class="hide-on-small-only">{{ item.city }}</td>
         <td>{{ item.d.city }}</td>
         <td> <strong> {{ item.order_status }} </strong></td>
         <td> <a  [routerLink]="[ '/user/details', item.order_id ]" class="btn-floating waves-effect waves-light red"><i class="material-icons">expand_more</i></a> </td>

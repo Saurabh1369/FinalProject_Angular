@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SourceAddress } from 'src/app/model/source_address';
 import { AdminService } from '../../../../Services/admin.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './admin-order-status.component.html',
   styleUrls: ['./admin-order-status.component.css']
 })
-export class AdminOrderStatusComponent implements OnInit {
+export class AdminOrderStatusComponent implements OnInit,AfterViewInit {
 
   constructor(private us:AdminService, private snackBar: MatSnackBar  ) { }
   
@@ -20,6 +20,13 @@ export class AdminOrderStatusComponent implements OnInit {
       this.srcaddr = s;
       console.log(this.srcaddr);
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
 

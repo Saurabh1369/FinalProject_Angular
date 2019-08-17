@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
@@ -9,7 +9,7 @@ import { Users } from 'src/app/model/user';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,AfterViewInit {
 
   constructor(private us : UserService , private router:Router) { }
 
@@ -17,6 +17,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
   signup()

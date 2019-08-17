@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AdminService } from 'src/app/Services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Users } from './../../../../model/user';
@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit,AfterViewInit  {
 
   constructor(private us:AdminService, private snackBar: MatSnackBar ) { }
 
@@ -21,6 +21,13 @@ export class UsersComponent implements OnInit {
 
       this.usrs= u.filter (u1 => u1.user_type != 'A');
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
 onDelete( user_id )

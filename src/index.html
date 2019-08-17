@@ -20,20 +20,25 @@
   <link rel="stylesheet"	href="./assets/icon.css">
 
   <link rel="stylesheet" href="./assets/materialize.min.css">
+
+  
   <script>
       $(document).ready( function() {
         $('select').formSelect();
+        $('.sidenav').sidenav();
       $('textarea#desc').characterCounter();
        });
   
        function myfun(){
-          $('#state').formSelect();
+          setTimeout(function(){
+            $('#state').formSelect();
+          }, 500);
        }
 
        function myfun1() {
         setTimeout(function(){
           $('#city').formSelect();
-          }, 300);
+          }, 1000);
        }
 
        function packgeload(){

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/Services/admin.service';
 import { SourceAddress } from 'src/app/model/source_address';
@@ -8,7 +8,7 @@ import { SourceAddress } from 'src/app/model/source_address';
   templateUrl: './admin-order-details.component.html',
   styleUrls: ['./admin-order-details.component.css']
 })
-export class AdminOrderDetailsComponent implements OnInit {
+export class AdminOrderDetailsComponent implements OnInit,AfterViewInit {
 
   constructor(  private route: ActivatedRoute, private router: Router, private as:AdminService ) { }
 
@@ -26,4 +26,10 @@ export class AdminOrderDetailsComponent implements OnInit {
       });
   }
 
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
+  }
 }

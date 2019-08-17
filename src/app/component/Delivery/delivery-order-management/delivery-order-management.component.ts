@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SourceAddress } from 'src/app/model/source_address';
 import { AdminService } from 'src/app/Services/admin.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
@@ -10,7 +10,7 @@ import { DeliveryService } from './../../../Services/delivery.service';
   templateUrl: './delivery-order-management.component.html',
   styleUrls: ['./delivery-order-management.component.css']
 })
-export class DeliveryOrderManagementComponent implements OnInit {
+export class DeliveryOrderManagementComponent implements OnInit , AfterViewInit {
 
   constructor( private us:AdminService, private snackBar: MatSnackBar, public dialog: MatDialog ,private ds:DeliveryService ) { }
   srcaddr : SourceAddress[];
@@ -22,6 +22,15 @@ export class DeliveryOrderManagementComponent implements OnInit {
       console.log(this.srcaddr);
     });
   }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
+  }
+
+  
 
   OrderUpdate( w ): void {
     const dialogRef = this.dialog.open( OrderManagementDialogComponent , {data : w } );

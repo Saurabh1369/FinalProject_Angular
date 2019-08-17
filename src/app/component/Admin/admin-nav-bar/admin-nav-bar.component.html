@@ -1,4 +1,4 @@
-<div class="navbar-fixed">
+<!-- <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper orange">
         <div class="container">
@@ -14,4 +14,30 @@
         </div>
       </div>
     </nav>
-  </div>
+  </div> -->
+
+  <nav>
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo"> {{ userName }} </a>
+          <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  
+          <ul class="right hide-on-med-and-down">
+              <li><a routerLink="/admin/home">Dashboard</a></li>
+              <li><a routerLink="/admin/orders">Order Manage</a></li>
+              <li><a routerLink="/admin/Price">Change Prices</a></li>
+              <li><a routerLink="/admin/users">User Manage</a></li>
+              <li><a routerLink="/user/logout">Logout</a></li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+  
+    <ul class="sidenav" id="mobile-demo">
+        <li><a routerLink="/admin/home">Dashboard</a></li>
+        <li><a routerLink="/admin/orders">Order Manage</a></li>
+        <li><a routerLink="/admin/Price">Change Prices</a></li>
+        <li><a routerLink="/admin/users">User Manage</a></li>
+        <li><a routerLink="/user/logout">Logout</a></li>
+    </ul>
+            

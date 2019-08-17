@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { UserService } from 'src/app/Services/user.service';
 import { Users } from 'src/app/model/user';
@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,AfterViewInit {
 
   constructor(private us : UserService,private router:Router) { }
 
@@ -21,6 +21,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
   onLogin()
