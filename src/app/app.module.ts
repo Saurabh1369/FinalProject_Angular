@@ -19,9 +19,23 @@ import { OrderDetailsComponent } from './component/User/order-details/order-deta
 import { LogoutComponent } from './component/Home/logout/logout.component';
 import { AdminHomeComponent } from './component/Admin/admin-home/admin-home.component';
 import { AdminNavBarComponent } from './component/Admin/admin-nav-bar/admin-nav-bar.component';
-import { AdminOrderStatusComponent } from './component/Admin/admin-order-status/admin-order-status.component';
+import { AdminOrderStatusComponent } from './component/Admin/OrderManagement/admin-order-status/admin-order-status.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AdminOrderDetailsComponent } from './component/Admin/OrderManagement/admin-order-details/admin-order-details.component';
+import {  MatSnackBarModule } from '@angular/material/snack-bar';
+import { UsersComponent } from './component/Admin/UserManagement/users/users.component';
+import { WeightComponent } from './component/Admin/PriceManagement/weight/weight.component';
+import { DeliveryTypeComponent } from './component/Admin/PriceManagement/delivery-type/delivery-type.component';
+import { PriceComponent } from './component/Admin/PriceManagement/price/price.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { WeightDailogComponent } from './component/Admin/PriceManagement/weight-dailog/weight-dailog.component';
+import { MatFormFieldModule,MatInputModule, MatSelectModule } from '@angular/material';
+import { DeliveryTypeDialogComponent } from './component/Admin/PriceManagement/delivery-type-dialog/delivery-type-dialog.component';
+import { DeliveryPersonRegisterComponent } from './component/Admin/delivery-person-register/delivery-person-register.component';
+import { DeliveryHomeComponent } from './component/Delivery/delivery-home/delivery-home.component';
+import { DeliveryNavBarComponent } from './component/Delivery/delivery-nav-bar/delivery-nav-bar.component';
+import { DeliveryOrderManagementComponent } from './component/Delivery/delivery-order-management/delivery-order-management.component';
+import { OrderManagementDialogComponent } from './component/Delivery/order-management-dialog/order-management-dialog.component';
 
 
 @NgModule({
@@ -41,16 +55,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LogoutComponent,
     AdminHomeComponent,
     AdminNavBarComponent,
-    AdminOrderStatusComponent
+    AdminOrderStatusComponent,
+    AdminOrderDetailsComponent,
+    UsersComponent,
+    WeightComponent,
+    DeliveryTypeComponent,
+    PriceComponent,
+    WeightDailogComponent,
+    DeliveryTypeDialogComponent,
+    DeliveryPersonRegisterComponent,
+    DeliveryHomeComponent,
+    DeliveryNavBarComponent,
+    DeliveryOrderManagementComponent,
+    OrderManagementDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [WeightDailogComponent,DeliveryTypeDialogComponent,OrderManagementDialogComponent]
 })
 export class AppModule { }

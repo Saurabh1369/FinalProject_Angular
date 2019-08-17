@@ -8,4 +8,6 @@ export class Users
     email:string;
     password:string;
     user_type:string;
+    order_status:string;
+    order_id:number;
 }

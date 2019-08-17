@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+  <form action="">
+    <div class="input-field col s12 l6">
+      <input type="text" id="dtype" name="dtype" class="validate" [(ngModel)]="data.d_type">
+      <label class="active" for="dtype">Delivery type</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <input type="text" id="price" name="price" class="validate" [(ngModel)]="data.price">
+      <label  class="active" for="price">Price</label>
+    </div>
+    <button class="btn waves-effect waves-light" [mat-dialog-close]="data" name="action">Update
+    </button>
+  </form>
+</div>

@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["/user/home"  ]);
          }
          else if (u.user_type == 'D'){
-          this.router.navigate(["/delivery/home"]);
+          this.router.navigate(["/delivery/Home"]);
          }
        }
        else{
@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
       },
       (err:HttpErrorResponse)=>{
         console.log(err.error);
+        this.msg ="Server Unavailable";
       }
       );
     

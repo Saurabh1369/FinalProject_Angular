@@ -11,7 +11,13 @@ import { OrderStatusComponent } from './component/User/order-status/order-status
 import { OrderDetailsComponent } from './component/User/order-details/order-details.component';
 import { LogoutComponent } from './component/Home/logout/logout.component';
 import { AdminHomeComponent } from './component/Admin/admin-home/admin-home.component';
-import { AdminOrderStatusComponent } from './component/Admin/admin-order-status/admin-order-status.component';
+import { AdminOrderStatusComponent } from './component/Admin/OrderManagement/admin-order-status/admin-order-status.component';
+import { AdminOrderDetailsComponent } from './component/Admin/OrderManagement/admin-order-details/admin-order-details.component';
+import { UsersComponent } from './component/Admin/UserManagement/users/users.component';
+import { PriceComponent } from './component/Admin/PriceManagement/price/price.component';
+import { DeliveryPersonRegisterComponent } from './component/Admin/delivery-person-register/delivery-person-register.component';
+import { DeliveryHomeComponent } from './component/Delivery/delivery-home/delivery-home.component';
+import { DeliveryOrderManagementComponent } from './component/Delivery/delivery-order-management/delivery-order-management.component';
 
 const routes: Routes = [
   { path:"" , component : HomeComponent },
@@ -27,7 +33,14 @@ const routes: Routes = [
   { path:'user/logout' , component : LogoutComponent },
 
   { path:'admin/home' , component : AdminHomeComponent },
-  { path:'admin/orders' , component : AdminOrderStatusComponent }
+  { path:'admin/orders' , component : AdminOrderStatusComponent },
+  { path:'admin/orderDetails/:id' , component : AdminOrderDetailsComponent },
+  { path:'admin/users' , component : UsersComponent },
+  { path:'admin/Price' , component : PriceComponent },
+  { path:'admin/Register' , component : DeliveryPersonRegisterComponent },
+  { path:'delivery/Home' , component : DeliveryHomeComponent },
+  { path:'delivery/orders' , component : DeliveryOrderManagementComponent }
+  
 ];
 
 @NgModule({

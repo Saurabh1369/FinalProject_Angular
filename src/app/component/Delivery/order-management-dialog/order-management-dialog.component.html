@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+  <form >
+    <h6>Order# {{ data.order_id }}</h6>
+
+
+        <mat-select placeholder="placeholder" [(ngModel)]="data.order_status" name="placeholder">
+            <mat-option value="In Transite">In Transite</mat-option>
+            <mat-option value="Picked Up">Picked Up</mat-option>
+            <mat-option value="Delivered">Delivered</mat-option>
+            <mat-option value="Returned">Returned</mat-option>
+          </mat-select>
+<br><br>
+    <button class="btn waves-effect waves-light" [mat-dialog-close]="data" name="action">Update
+    </button>
+  </form>
+</div>

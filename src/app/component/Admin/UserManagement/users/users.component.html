@@ -1,0 +1,27 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+<br>
+
+<div class="container z-depth-3" style="padding: 30px">
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th >ID #</th>
+        <th >First Name</th>
+        <th >Last Name</th>
+        <th >Email</th>
+        <th >User Type</th>
+        <th ></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of usrs">
+        <td>{{ item.user_id }}</td>
+        <td>{{ item.fname }}</td>
+        <td>{{ item.lname }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.user_type }}</td>
+        <td> <a  (click)="onDelete( item.user_id )" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete_forever</i></a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
