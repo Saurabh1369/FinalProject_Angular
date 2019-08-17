@@ -14,7 +14,7 @@ const httpheader =
 export class UserService {
   constructor(private http:HttpClient) { }
 
-  hosturl = "http://localhost:7070/Project_REST/users";
+  hosturl = "https://rest-java-cms.herokuapp.com/users";
 
   signupService(user :any) : Observable<Users>
   {
