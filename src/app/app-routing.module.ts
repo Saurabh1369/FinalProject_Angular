@@ -20,8 +20,7 @@ import { DeliveryHomeComponent } from './component/Delivery/delivery-home/delive
 import { DeliveryOrderManagementComponent } from './component/Delivery/delivery-order-management/delivery-order-management.component';
 
 const routes: Routes = [
-  { path:"" , component : HomeComponent },
-  { path:"login" , component : LoginComponent },
+  { path:"" , component : LoginComponent },
   { path:"register" , component : RegisterComponent },
 
   { path:"user/home" , component : UserHomeComponent },
