@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { User2Service } from './../../../../Services/user2.service';
 import { Router } from '@angular/router';
 import { States } from 'src/app/model/State';
 import { City } from './../../../../model/City';
 import { DestinationAddress } from './../../../../model/destination_address';
 import { HttpErrorResponse } from '@angular/common/http';
-
+declare var M: any;
 @Component({
   selector: 'app-destination-address',
   templateUrl: './destination-address.component.html',
   styleUrls: ['./destination-address.component.css']
 })
-export class DestinationAddressComponent implements OnInit {
+export class DestinationAddressComponent implements OnInit,AfterViewInit {
 
   constructor(private us:User2Service ,private router:Router) { }
 
@@ -27,6 +27,13 @@ export class DestinationAddressComponent implements OnInit {
       this.states = s;
       console.log(this.states);
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
   loadCities()

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { States } from './../../../../model/State';
 import { User2Service } from 'src/app/Services/user2.service';
 import { City } from './../../../../model/City';
 import { SourceAddress } from 'src/app/model/source_address';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+declare var M: any;
 
 
 @Component({
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './pickup-address.component.html',
   styleUrls: ['./pickup-address.component.css']
 })
-export class PickupAddressComponent implements OnInit {
+export class PickupAddressComponent implements OnInit ,AfterViewInit{
 
   constructor(private us:User2Service ,private router:Router) { }
 
@@ -30,6 +30,13 @@ export class PickupAddressComponent implements OnInit {
       this.states = s;
       console.log(this.states);
     });
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
   
 

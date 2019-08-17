@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SourceAddress } from './../../../model/source_address';
 import { UserHomeService } from './../../../Services/user-home.service';
+declare var M: any;
 
 @Component({
   selector: 'app-order-status',
   templateUrl: './order-status.component.html',
   styleUrls: ['./order-status.component.css']
 })
-export class OrderStatusComponent implements OnInit {
+export class OrderStatusComponent implements OnInit,AfterViewInit {
 
   constructor(private us:UserHomeService) { }
 
@@ -18,6 +19,12 @@ export class OrderStatusComponent implements OnInit {
       this.srcaddr = s;
       console.log(this.srcaddr);
     });
+  }
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
   }
 
 }

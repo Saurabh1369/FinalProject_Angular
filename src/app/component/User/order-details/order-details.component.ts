@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserHomeService } from './../../../Services/user-home.service';
 import { SourceAddress } from 'src/app/model/source_address';
-
+declare var M: any;
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrls: ['./order-details.component.css']
 })
-export class OrderDetailsComponent implements OnInit {
+export class OrderDetailsComponent implements OnInit,AfterViewInit {
 
   constructor( private route: ActivatedRoute, private router: Router, private us:UserHomeService) { }
   
@@ -25,5 +25,11 @@ export class OrderDetailsComponent implements OnInit {
         this.orderDetail = s;
       });
   } 
+  ngAfterViewInit(): void {
+    setTimeout( function() {
+      var elem = document.querySelector('.sidenav');
+      var instance = M.Sidenav.init(elem);
+    }, 0)
+  }
 
 }
