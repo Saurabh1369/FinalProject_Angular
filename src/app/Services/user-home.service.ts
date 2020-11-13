@@ -4,8 +4,7 @@ import { SourceAddress } from 'src/app/model/source_address';
 import { Observable } from 'rxjs';
 
 
-const httpheader = 
-{
+const httpheader = {
   headers:new HttpHeaders({'Content-Type':"application/json"})
 }
 
@@ -18,14 +17,12 @@ export class UserHomeService {
   
   hosturl = "https://rest-java-cms.herokuapp.com";
 
-  getAllOrders( id ) : Observable <SourceAddress[]>
-  {
+  getAllOrders( id ) : Observable <SourceAddress[]> {
     const url = `${this.hosturl}/getAllOrders/${id}`;
     return this.http.get < SourceAddress[] > (url,httpheader);
   }
 
-  getOrderById(id) : Observable <SourceAddress>
-  {
+  getOrderById(id) : Observable <SourceAddress> {
     const url = `${this.hosturl}/getOrderByID/${id}`;
     return this.http.get < SourceAddress > (url,httpheader);
   }

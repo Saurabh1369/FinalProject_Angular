@@ -19,9 +19,8 @@ export class LoginComponent implements OnInit,AfterViewInit {
   user :Users;
   msg:string;
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() { }
+
   ngAfterViewInit(): void {
     setTimeout( function() {
       var elem = document.querySelector('.sidenav');
@@ -29,36 +28,27 @@ export class LoginComponent implements OnInit,AfterViewInit {
     }, 0)
   }
 
-  onLogin()
-  {
-    console.log("onLogin()");
-    this.us.onlogin( this.u ).subscribe( u => {
-       console.log(u);
-       if( u != null)
-       {
-        sessionStorage.setItem('uname',u.fname);
-        sessionStorage.setItem('id',u.user_id.toString());
-        
-         if(u.user_type == 'A'){
-          this.router.navigate(["/admin/home"]);
-         }
-         else if(u.user_type == 'U'){
-          this.router.navigate(["/user/home"  ]);
-         }
-         else if (u.user_type == 'D'){
-          this.router.navigate(["/delivery/Home"]);
-         }
-       }
-       else{
+  onLogin() {
+    this.us.onlogin( this.u ).subscribe( user => {
+      if (!user) {
         this.msg ="Invalid Email or Password";
         this.router.navigate(["/login"]);
-        }
-      },
-      (err:HttpErrorResponse)=>{
-        console.log(err.error);
-        this.msg ="Server Unavailable";
+        return;
       }
-      );
-    
+      sessionStorage.setItem('uname', user.fname);
+      sessionStorage.setItem('id', user.user_id.toString());
+      if(user.user_type === 'A'){
+      this.router.navigate(["/admin/home"]);
+      }
+      else if(user.user_type === 'U'){
+      this.router.navigate(["/user/home"  ]);
+      }
+      else if (user.user_type === 'D'){
+      this.router.navigate(["/delivery/Home"]);
+      }
+    },
+    (err:HttpErrorResponse)=>{
+      this.msg ="Server Unavailable";
+    });
   }
 }

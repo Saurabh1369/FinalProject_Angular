@@ -23,7 +23,6 @@ const routes: Routes = [
   { path:"" , component : LoginComponent },
   { path:"login" , component : LoginComponent },
   { path:"register" , component : RegisterComponent },
-
   { path:"user/home" , component : UserHomeComponent },
   { path:"user/order/pickup" , component : PickupAddressComponent },
   { path:"user/order/destination" , component : DestinationAddressComponent },
@@ -31,7 +30,6 @@ const routes: Routes = [
   { path:"user/status" , component : OrderStatusComponent },
   { path:'user/details/:id' , component : OrderDetailsComponent },
   { path:'user/logout' , component : LogoutComponent },
-
   { path:'admin/home' , component : AdminHomeComponent },
   { path:'admin/orders' , component : AdminOrderStatusComponent },
   { path:'admin/orderDetails/:id' , component : AdminOrderDetailsComponent },
@@ -40,7 +38,6 @@ const routes: Routes = [
   { path:'admin/Register' , component : DeliveryPersonRegisterComponent },
   { path:'delivery/Home' , component : DeliveryHomeComponent },
   { path:'delivery/orders' , component : DeliveryOrderManagementComponent }
-  
 ];
 
 @NgModule({
