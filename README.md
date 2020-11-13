@@ -2,7 +2,7 @@
 This is my learning project for angular 7. while i was in CDAC. nothing fancy here.
 * materializCSS
 * deployed on heroku.
-* angular http requests still hits heroku backend. ( i wasnt expecting its still up, after 1 year, haha )
+* angular http requests hits heroku backend. ( i wasnt expecting its still up, after 1 year, haha )
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
