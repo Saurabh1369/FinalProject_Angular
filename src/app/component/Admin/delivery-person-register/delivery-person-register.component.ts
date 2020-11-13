@@ -13,10 +13,9 @@ export class DeliveryPersonRegisterComponent implements OnInit,AfterViewInit  {
 
   constructor( private as:AdminService ,private router:Router ) { }
 
-  user :Users = new Users();
+  user:Users = new Users();
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
   ngAfterViewInit(): void {
     setTimeout( function() {
       var elem = document.querySelector('.sidenav');
@@ -24,17 +23,14 @@ export class DeliveryPersonRegisterComponent implements OnInit,AfterViewInit  {
     }, 0)
   }
 
-  signup()
-  {
+  signup() {
     this.user.user_type="D";
-    this.as.signupService(this.user).subscribe( s=>
-      {
-        this.router.navigate(["/admin/home"]);
-      },
-      err=>{
-        console.log(err.error);
-      } );
-    
+    this.as.signupService(this.user).subscribe( s=> {
+      this.router.navigate(["/admin/home"]);
+    },
+    err=> {
+      console.log(err.error);
+    });
   }
 
 }

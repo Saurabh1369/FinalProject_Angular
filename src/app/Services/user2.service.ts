@@ -8,8 +8,7 @@ import { DeliveryType } from './../model/Delivery_Type';
 import { packageInfo } from '../model/packge-info';
 
 
-const httpheader = 
-{
+const httpheader = {
   headers:new HttpHeaders({'Content-Type':"application/json"})
 }
 
@@ -22,58 +21,46 @@ export class User2Service {
 
   hosturl = "https://rest-java-cms.herokuapp.com";
 
-
-
-  loadStates() : Observable <States []>
-  {
+  loadStates() : Observable <States []> {
     const url = `${this.hosturl}/states`;
     return this.http.get < States[] > ( url ,httpheader );
-
   }
 
-  loadCities( selectedState ): Observable < City[] >
-  {
-    console.log( selectedState );
+  loadCities( selectedState ): Observable < City[] > {
     const url = `${ this.hosturl }/city`;
     return this.http.post < City[] > ( url, selectedState, httpheader);
   }
 
-  onPickupSubmit( sourceaddr ):Observable <any>
-  {
+  onPickupSubmit( sourceaddr ):Observable <any> {
     const url = `${ this.hosturl }/pickupAddress`;
     return this.http.post <any> ( url, sourceaddr, {
       responseType: 'text' as 'json'
         });
   }
 
-  onDestineSubmit( destaddr ) : Observable <any>
-  {
+  onDestineSubmit( destaddr ) : Observable <any> {
     const url = `${ this.hosturl }/destination`;
     return this.http.post <any> ( url, destaddr, {
       responseType:  'text' as 'json'
         });
   }
 
-  statebyID( selectedState ):Observable <States>
-  {
+  statebyID( selectedState ):Observable <States> {
     const url = `${ this.hosturl }/statebyID`;
     return this.http.post < States > ( url ,selectedState ,httpheader );
   }
 
-  getWeights() :Observable < Weight[] >
-  {
+  getWeights() :Observable < Weight[] > {
     const url = `${ this.hosturl }/Weights`;
     return this.http.get < Weight[] > (url,httpheader);
   }
 
-  getDtype() : Observable < DeliveryType[] >
-  {
+  getDtype() : Observable < DeliveryType[] > {
     const url = `${ this.hosturl }/dtype`;
     return this.http.get< DeliveryType[] > (url,httpheader);
   }
 
-  onPackageSubmit( pkg ) :Observable <any>
-  {
+  onPackageSubmit( pkg ) :Observable <any> {
     const url = `${ this.hosturl }/packageInfo`;
     return this.http.post < any > (url , pkg,{
       responseType:  'text' as 'json'
